@@ -1,5 +1,7 @@
 ## Installation
 
+MySQL 5.7 is required.
+
 ```bash
 $ npm install
 ```
