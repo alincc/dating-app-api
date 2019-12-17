@@ -12,16 +12,7 @@ import { Photo, PhotoModule } from 'src/photo';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'dating-app',
-      password: 'dating-app',
-      database: 'dating_app',
-      entities: [User, Gender, Orientation, School, Photo],
-      synchronize: true,
-    }),
+    TypeOrmModule.forRoot(),
     UserModule,
     GenderModule,
     OrientationModule,

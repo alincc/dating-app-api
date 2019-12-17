@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "dating-app",
+  "password": "dating-app",
+  "database": "dating_app",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "synchronize": true,
+  "seeds": ["dist/database/seeds/**/*.seed.js"],
+  "factories": ["dist/database/factories/**/*.factory.js"]
+}

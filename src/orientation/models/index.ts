@@ -1,1 +1,1 @@
-export * from './orientation';
+export * from './orientation.entity';

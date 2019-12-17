@@ -9,7 +9,7 @@ import {
   OneToMany,
   ManyToOne,
 } from 'typeorm';
-import { Gender } from 'src/gender/models';
+import { Gender } from 'src/gender';
 import { Orientation } from 'src/orientation';
 import { School } from 'src/school';
 import { Photo } from 'src/photo';
