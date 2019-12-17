@@ -6,7 +6,7 @@ MySQL 5.7 is required.
 $ npm install
 ```
 
-```
+```bash
 mysql [login] < setup.sql
 ```
 
