@@ -22,8 +22,14 @@ export class User {
   @Column({ length: 100 })
   name: string;
 
+  @Column()
+  email: string;
+
+  @Column()
+  phoneNumber: string;
+
   @Column('date')
-  dateOfBirth: string;
+  dateOfBirth: Date;
 
   @Column('decimal', { precision: 20, scale: 3 })
   lat: number;
@@ -32,7 +38,7 @@ export class User {
   lng: number;
 
   @Column('varchar')
-  geocode: string;
+  geohash: string;
 
   @Column({ length: 100 })
   jobTitle: string;
@@ -58,8 +64,10 @@ export class User {
   @Column('bool')
   orientationQueryPreference: boolean;
 
-  @OneToOne(type => Gender)
-  @JoinColumn()
+  @ManyToOne(
+    type => Gender,
+    gender => gender.users,
+  )
   gender: Gender;
 
   @ManyToMany(type => Orientation)

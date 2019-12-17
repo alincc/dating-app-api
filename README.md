@@ -22,7 +22,7 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 
-# seed database
+# seed database (run or build app first)
 $ npm run seed
 ```
 

@@ -16,7 +16,7 @@ export class School {
   lng: number;
 
   @Column('varchar')
-  geocode: string;
+  geohash: string;
 
   @OneToMany(
     type => User,
