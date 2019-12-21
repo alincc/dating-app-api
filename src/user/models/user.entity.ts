@@ -2,10 +2,8 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
   JoinTable,
   ManyToMany,
-  JoinColumn,
   OneToMany,
   ManyToOne,
 } from 'typeorm';

@@ -4,11 +4,11 @@ import { AppService } from './app.service';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { CorsHeaderInterceptor } from './interceptors';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User, UserModule } from 'src/user';
-import { Gender, GenderModule } from 'src/gender';
-import { Orientation, OrientationModule } from 'src/orientation';
-import { School, SchoolModule } from 'src/school';
-import { Photo, PhotoModule } from 'src/photo';
+import { UserModule } from 'src/user';
+import { GenderModule } from 'src/gender';
+import { OrientationModule } from 'src/orientation';
+import { SchoolModule } from 'src/school';
+import { PhotoModule } from 'src/photo';
 
 @Module({
   imports: [
