@@ -1,5 +1,14 @@
-import { Controller, Get, Req, Res } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Req,
+  Res,
+  Next,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 import { UsersService } from '../users.service';
+import { User } from '../models';
 
 // Max distance in miles... need to get from user preferences (not set up yet)
 const maxDistance = 5;
@@ -9,11 +18,20 @@ export class UsersController {
   constructor(private users: UsersService) {}
 
   @Get()
-  async find(@Req() req, @Res() res) {
-    const { query } = req;
+  async find(@Req() req): Promise<User[]> {
+    const {
+      query: { lat, lng },
+    } = req;
 
-    const users = await this.users.find(maxDistance, query.lat, query.lng);
+    if (!lat || !lng) {
+      throw new HttpException(
+        'No location data provided.',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
 
-    return res.json(users);
+    const users = await this.users.find(maxDistance, lat, lng);
+
+    return users;
   }
 }
